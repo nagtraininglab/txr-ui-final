@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const TxrForm = () => {
 
-    const [form, setForm] = useState({})
+    const [form, setForm] = useState({fromAccNumber:'',toAccNumber:'',amount:0})
     const [message, setMessage] = useState('')
 
 
@@ -22,6 +22,7 @@ const TxrForm = () => {
         })
             .then(response => response.json())
             .then(data => {
+                setForm({fromAccNumber:'',toAccNumber:'',amount:0})
                 setMessage(data.message)
             })
 
@@ -45,15 +46,15 @@ const TxrForm = () => {
                         <form onSubmit={e => handleForm(e)}>
                             <div className="form-group">
                                 <label>From Account:</label>
-                                <input onChange={e => handleChange('fromAccNumber', e)} className="form-control" />
+                                <input value={form.fromAccNumber} onChange={e => handleChange('fromAccNumber', e)} className="form-control" />
                             </div>
                             <div className="form-group">
                                 <label>To Account:</label>
-                                <input onChange={e => handleChange('toAccNumber', e)} className="form-control" />
+                                <input value={form.toAccNumber} onChange={e => handleChange('toAccNumber', e)} className="form-control" />
                             </div>
                             <div className="form-group">
                                 <label>Amount:</label>
-                                <input onChange={e => handleChange('amount', e)} className="form-control" />
+                                <input value={form.amount} onChange={e => handleChange('amount', e)} className="form-control" />
                             </div>
                             <button className="btn btn-sm btn-dark">Txr</button>
                         </form>
