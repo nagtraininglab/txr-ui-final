@@ -64,6 +64,9 @@ const TxrForm = () => {
             <div className="col-xs-12 col-sm-4 col-md-4">
                 {renderMssage()}
             </div>
+
+            <img src="cognizant.png" class="w3-border w3-padding" alt="Cog"> </img>
+            
         </div>
 
     );
