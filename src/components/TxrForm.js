@@ -64,9 +64,6 @@ const TxrForm = () => {
             <div className="col-xs-12 col-sm-4 col-md-4">
                 {renderMssage()}
             </div>
-
-            
-            
         </div>
 
     );
