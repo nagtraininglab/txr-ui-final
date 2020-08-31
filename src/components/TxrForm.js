@@ -13,7 +13,7 @@ const TxrForm = () => {
     const handleForm = e => {
         e.preventDefault();
 
-        fetch("http:txr-service.eba-viivh2dg.us-east-1.elasticbeanstalk.com//api/txr", {
+        fetch("http://transferservice-env.eba-bzyapamv.us-east-1.elasticbeanstalk.com/api/txr", {
             method: 'POST',
             body: JSON.stringify(form),
             headers: {
